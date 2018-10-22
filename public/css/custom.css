@@ -1,0 +1,10 @@
+
+.label-error {
+    text-align: center;
+    color: #CD2626;
+    display: none;
+}
+.alert-sm {
+    padding: 10px 5px;
+    text-align: center
+}

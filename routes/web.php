@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("login", ['as' => 'login', 'uses' => 'PageController@getLogin']);
+
+Route::post("login", ['as' => 'post.login', 'uses' => 'PageController@postLogin']);
+
+Route::get("register", ['as' => 'register', 'uses' => 'PageController@getRegister']);
+
+Route::post("register", ['as' => 'post.register', 'uses' => 'PageController@postRegister']);
+
+Route::group(['prefix' => '/', 'middleware' => 'checkAuth'],  function (){
+    Route::get("", ['as' => 'home', 'uses' => 'PageController@getIndex']);
 });
